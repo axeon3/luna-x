@@ -1,0 +1,8 @@
+{
+  "name": "AXE-luna-x",
+  "description": "A high-performance browser architecture for visualizing NASA lunar mission telemetry and geospatial planetary data.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
