@@ -1,0 +1,57 @@
+name: Math & Physics Verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'libration_sim.py'
+      - 'tests/**'
+      - '.github/workflows/math-physics-verify.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'libration_sim.py'
+      - 'tests/**'
+      - '.github/workflows/math-physics-verify.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  python-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python verification dependencies
+        run: pip install pytest hypothesis crosshair-tool pint numpy
+
+      - name: Run pytest & Hypothesis property tests
+        run: pytest -v tests/test_lunar_math_physics.py
+
+      - name: Run CrossHair symbolic verification
+        run: python -m crosshair check tests/test_lunar_math_physics.py --per_condition_timeout=10
+
+  ts-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Vitest and fast-check
+        run: npm install --no-save vitest fast-check
+
+      - name: Run Vitest property tests
+        run: npx vitest run tests/lunar_invariants.test.ts
