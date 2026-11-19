@@ -1,0 +1,41 @@
+name: Checkov IaC Scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'axeon3-scanner/**'
+      - '.github/workflows/checkov.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'axeon3-scanner/**'
+      - '.github/workflows/checkov.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  checkov:
+     name: Checkov (axeon3-scanner)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Checkov
+        id: checkov
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: axeon3-scanner
+          output_format: sarif
+          output_file_path: results.sarif
+          soft_fail: true
+
+      - name: Upload Checkov SARIF
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
