@@ -4,12 +4,12 @@ on:
   push:
     branches: [main]
     paths:
-      - 'axetreme-scan/**'
+      - 'axeon3-scanner/**'
       - '.github/workflows/checkov.yml'
   pull_request:
     branches: [main]
     paths:
-      - 'axetreme-scan/**'
+      - 'axeon3-scanner/**'
       - '.github/workflows/checkov.yml'
   workflow_dispatch:
 
@@ -19,6 +19,7 @@ permissions:
 
 jobs:
   checkov:
+     name: Checkov (axeon3-scanner)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,7 +29,7 @@ jobs:
         id: checkov
         uses: bridgecrewio/checkov-action@v12
         with:
-          directory: axetreme-scan
+          directory: axeon3-scanner
           output_format: sarif
           output_file_path: results.sarif
           soft_fail: true
