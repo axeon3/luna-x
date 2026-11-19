@@ -25,7 +25,7 @@ jobs:
           - language: actions
             build-mode: none
           - language: javascript-typescript
-          build-mode: none
+            build-mode: none
 
     steps:
       - name: Checkout repository
