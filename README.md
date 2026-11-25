@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -61,6 +60,7 @@
     #toast {
       transition: opacity 0.2s ease, transform 0.2s ease;
     }
+    /* Hide scrollbar for horizontal pill nav on mobile */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -102,7 +102,7 @@
           <div class="flex flex-wrap items-center gap-2">
             <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#89b4fa]/15 text-[#89b4fa] border border-[#89b4fa]/30">
               <i data-lucide="moon" class="w-3.5 h-3.5"></i>
-              NASA Space Apps Challenge 2026 (Nov 14–15, 2026)
+              NASA Space Apps Challenge 2026
             </span>
             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#a6e3a1]/15 text-[#a6e3a1] border border-[#a6e3a1]/30">
               Team Axe · San José
@@ -110,13 +110,13 @@
           </div>
 
           <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-[#cdd6f4]">
-            10 - CLPS: Lunar Landing Site Navigator
+            Lunar Landing Site Navigator
           </h1>
           <p class="text-sm sm:text-base text-[#a6adc8] font-medium">
             Credits, Acknowledgments &amp; Cited Sources (10-Section Directory)
           </p>
           <p class="text-xs sm:text-sm text-[#a6adc8] max-w-3xl leading-relaxed">
-            Mission data citations, NASA Space Apps Challenge organizers, planetary ephemeris &amp; lunar topography APIs, technical stack references, and project deliverables created by Team Axe for
+            Mission credits, NASA Space Apps Challenge organizers, planetary ephemeris &amp; lunar topography APIs, technical stack citations, and project deliverables for
             <a href="https://github.com/teamaxe/Luna-X" target="_blank" rel="noopener noreferrer" class="font-mono text-[#89b4fa] hover:underline">teamaxe/Luna-X</a>
             and
             <a href="https://github.com/teamaxe/lunar" target="_blank" rel="noopener noreferrer" class="font-mono text-[#89b4fa] hover:underline">teamaxe/lunar</a>.
@@ -161,18 +161,42 @@
     </div>
 
     <!-- ======================================================================= -->
-    <!-- 1. Featured Group — VTA, NASA Directorates, Space Apps & Google         -->
+    <!-- 1. Featured Group — Directorate Sponsors, VTA, Space Apps, NASA & Google -->
     <!-- ======================================================================= -->
     <section id="sec-1" class="section-anchor space-y-4 searchable-section">
       <div class="flex items-center justify-between border-b border-[#313244] pb-2.5">
         <div class="flex items-center gap-2.5">
           <span class="px-2 py-0.5 rounded-md text-xs font-mono font-semibold bg-[#a6e3a1]/15 text-[#a6e3a1] border border-[#a6e3a1]/30">01</span>
-          <h2 class="text-lg sm:text-xl font-bold text-[#cdd6f4]">Featured Group — VTA, NASA Directorate Sponsors, Space Apps Team &amp; Google</h2>
+          <h2 class="text-lg sm:text-xl font-bold text-[#cdd6f4]">Featured Group — NASA Directorate Sponsors, VTA, Space Apps &amp; Google</h2>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- VTA FIRST -->
+        <!-- NASA Directorate Sponsors FIRST -->
+        <article class="card-surface rounded-2xl p-5 border-[#89b4fa]/40 space-y-2.5 searchable-item md:col-span-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-[#11111b] border border-[#89b4fa]/40 flex items-center justify-center shrink-0">
+                <i data-lucide="orbit" class="w-5 h-5 text-[#89b4fa]"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-[#cdd6f4]">NASA Directorate Sponsors</h3>
+                <p class="text-xs text-[#a6adc8]">Primary Mission Directorates &amp; Science Divisions</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-[#11111b] border border-[#313244] text-[#89b4fa] hover:border-[#89b4fa]">science.nasa.gov</a>
+              <a href="https://www.nasa.gov/directorates/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-[#11111b] border border-[#313244] text-[#89b4fa] hover:border-[#89b4fa]">nasa.gov/directorates</a>
+            </div>
+          </div>
+          <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-xs sm:text-sm text-[#cdd6f4]/90">
+            <li class="p-2.5 rounded-xl bg-[#11111b] border border-[#313244]">NASA Earth Science Division (ESD) &amp; Science Mission Directorate (SMD)</li>
+            <li class="p-2.5 rounded-xl bg-[#11111b] border border-[#313244]">NASA Space Technology Mission Directorate (STMD) &amp; Exploration Systems Development (ESDMD)</li>
+            <li class="p-2.5 rounded-xl bg-[#11111b] border border-[#313244]">NASA Heliophysics &amp; Planetary Science Divisions</li>
+          </ul>
+        </article>
+
+        <!-- VTA -->
         <article class="card-surface rounded-2xl p-5 border-[#a6e3a1]/40 searchable-item md:col-span-2">
           <div class="flex items-start justify-between gap-3">
             <div class="flex items-center gap-3">
@@ -196,30 +220,6 @@
           <blockquote class="mt-3.5 pl-3.5 border-l-2 border-[#a6e3a1] text-sm text-[#cdd6f4]/90 italic leading-relaxed">
             “More than drivers to us; sometimes they were the only shed of light when things got dark and hopeless, keeping public transit moving and connecting our local communities.”
           </blockquote>
-        </article>
-
-        <!-- NASA Directorate Sponsors -->
-        <article class="card-surface rounded-2xl p-5 border-[#89b4fa]/40 space-y-2.5 searchable-item md:col-span-2">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-[#11111b] border border-[#89b4fa]/40 flex items-center justify-center shrink-0">
-                <i data-lucide="orbit" class="w-5 h-5 text-[#89b4fa]"></i>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-[#cdd6f4]">NASA Directorate Sponsors (2026 Challenge Program)</h3>
-                <p class="text-xs text-[#a6adc8]">Participating NASA Mission Directorates &amp; Science Divisions</p>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-2 text-xs font-mono">
-              <a href="https://science.nasa.gov/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-[#11111b] border border-[#313244] text-[#89b4fa] hover:border-[#89b4fa]">science.nasa.gov</a>
-              <a href="https://www.nasa.gov/directorates/" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-[#11111b] border border-[#313244] text-[#89b4fa] hover:border-[#89b4fa]">nasa.gov/directorates</a>
-            </div>
-          </div>
-          <ul class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-xs sm:text-sm text-[#cdd6f4]/90">
-            <li class="p-2.5 rounded-xl bg-[#11111b] border border-[#313244]">NASA Earth Science Division (ESD) &amp; Science Mission Directorate (SMD)</li>
-            <li class="p-2.5 rounded-xl bg-[#11111b] border border-[#313244]">NASA Space Technology Mission Directorate (STMD) &amp; Exploration Systems Development Mission Directorate (ESDMD)</li>
-            <li class="p-2.5 rounded-xl bg-[#11111b] border border-[#313244]">NASA Heliophysics &amp; Planetary Science Divisions</li>
-          </ul>
         </article>
 
         <!-- Space Apps Team & GO Team -->
@@ -270,7 +270,7 @@
               </div>
               <div>
                 <h3 class="text-base font-semibold text-[#cdd6f4]">Google (Gemini, Google AI Studio, Google DeepMind &amp; 2026 Global Collaborator)</h3>
-                <p class="text-xs text-[#a6adc8]">AI research tools, multi-agent coordination, and cloud infrastructure</p>
+                <p class="text-xs text-[#a6adc8]">AI research, multi-agent coordination, and cloud infrastructure</p>
               </div>
             </div>
             <div class="flex flex-wrap gap-2 text-xs font-mono">
@@ -296,7 +296,7 @@
         <article class="card-surface rounded-2xl p-5 space-y-2.5 searchable-item">
           <h3 class="text-sm font-semibold uppercase tracking-wider text-[#89b4fa]">Global Organizing (GO) Team &amp; Support Staff</h3>
           <p class="text-xs sm:text-sm text-[#a6adc8] leading-relaxed">
-            Thank you to the entire NASA Space Apps GO Team (funded by NASA's Science Mission Directorate through a contract with Booz Allen Hamilton, Mindgrub, and SecondMuse) and all event, technical, operational, and community support staff who supported builders worldwide during the November 14–15, 2026 hackathon.
+            Thank you to the entire NASA Space Apps GO Team (funded by NASA's Science Mission Directorate via Booz Allen Hamilton, Mindgrub, and SecondMuse) and all event, technical, operational, and community support staff supporting builders worldwide.
           </p>
           <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-mono">
             <a href="https://www.spaceappschallenge.org/contact-us/" target="_blank" rel="noopener noreferrer" class="text-[#89b4fa] hover:underline">spaceappschallenge.org/contact-us</a>
@@ -308,25 +308,22 @@
         </article>
 
         <article class="card-surface rounded-2xl p-5 space-y-2.5 searchable-item">
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#cba6f7]">San José Local Event (November 14–15, 2026)</h3>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#cba6f7]">San José Local Event (Nov 14–15, 2026)</h3>
           <p class="text-xs sm:text-sm text-[#a6adc8] leading-relaxed">
-            <strong class="text-[#cdd6f4]">Cathy Lei (@cathoryn, San José Local Event Lead)</strong> &amp; San José Local Event Organizers, Support Staff, Mentors, Judges &amp; Volunteers.
+            <strong class="text-[#cdd6f4]">Catherine (@cathoryn, San José Local Event Lead)</strong> &amp; San José Local Event Organizers, Support Staff, Mentors, Judges &amp; Volunteers.
           </p>
           <div class="pt-1 flex flex-wrap items-center gap-3 text-xs font-mono">
             <a href="https://www.spaceappschallenge.org/2026/local-events/san-jose-ca/" target="_blank" rel="noopener noreferrer" class="text-[#89b4fa] hover:underline">2026/local-events/san-jose-ca/</a>
-            <span class="px-2.5 py-1 rounded-lg bg-[#11111b] border border-[#313244] text-[#a6adc8]">San José, CA</span>
+            <span class="px-2.5 py-1 rounded-lg bg-[#11111b] border border-[#313244] text-[#a6adc8]">Contact via Local Event Portal</span>
           </div>
         </article>
 
-        <article class="card-surface rounded-2xl p-5 space-y-2.5 searchable-item md:col-span-2">
-          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#94e2d5]">2026 Global Collaborators &amp; Space Agency Partners</h3>
-          <ul class="space-y-2 text-xs sm:text-sm text-[#a6adc8]">
+        <article class="card-surface rounded-2xl p-5 space-y-2.5 searchable-item">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-[#94e2d5]">Partners &amp; Collaborators</h3>
+          <ul class="space-y-1.5 text-xs sm:text-sm text-[#a6adc8]">
             <li><strong class="text-[#cdd6f4]">2026 Global Collaborators:</strong> GoDaddy, Google, Meteomatics, Microsoft, Miro (<a href="https://www.spaceappschallenge.org/2026/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#89b4fa] hover:underline">2026 Portal</a>)</li>
-            <li><strong class="text-[#cdd6f4]">2026 Space Agency Partners (17 Global Partners):</strong> ISRO, ESA, JAXA, CSA, UK Space Agency, GGPEN, CONAE, BSA, AEB, ASI, KASA, NASRDA, AEP, ASES, AEE, TUA, and MBRSC (<a href="https://www.spaceappschallenge.org/2026/space-agency-partners/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#89b4fa] hover:underline">Space Agency Partners</a>)</li>
+            <li><strong class="text-[#cdd6f4]">2026 Space Agency Partners:</strong> ISRO, ESA, JAXA, CSA, UK Space Agency, and 17 global space agency partners (<a href="https://www.spaceappschallenge.org/2026/space-agency-partners/" target="_blank" rel="noopener noreferrer" class="font-mono text-xs text-[#89b4fa] hover:underline">Partners</a>)</li>
           </ul>
-          <p class="text-[11px] text-[#a6adc8] pt-1 border-t border-[#313244]/70">
-            Compliance &amp; Attribution Notice: Referenced partner names, NASA mission datasets, and official challenge identifiers are cited strictly for open-science attribution by an independent hackathon participant team and do not imply official agency or corporate endorsement.
-          </p>
         </article>
 
         <article class="card-surface rounded-2xl p-5 space-y-2.5 searchable-item md:col-span-2">
@@ -637,17 +634,6 @@
           We express our deepest gratitude and recognition to the men and women currently serving and who have served—both in uniform and across public and community service—whose unwavering dedication, sacrifice, and continued support safeguard the foundational environment that enables open scientific exploration, public service, and collaborative innovation worldwide.
         </p>
 
-        <!-- VTA Highlight Banner in Section 6 -->
-        <div class="p-4 rounded-xl bg-[#11111b] border border-[#a6e3a1]/40 space-y-1.5 searchable-item">
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <h3 class="text-xs sm:text-sm font-bold text-[#a6e3a1] uppercase tracking-wider">Santa Clara Valley Transportation Authority (VTA) — Public Transit &amp; Community Lifeline</h3>
-            <a href="https://www.vta.org/" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-[#89b4fa] hover:underline">https://www.vta.org/</a>
-          </div>
-          <p class="text-xs sm:text-sm text-[#cdd6f4]/90 italic leading-relaxed">
-            “More than drivers to us; sometimes they were the only shed of light when things got dark and hopeless, keeping public transit moving and connecting our local communities.”
-          </p>
-        </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
           <div class="p-4 rounded-xl bg-[#11111b] border border-[#313244] space-y-2 searchable-item">
             <h3 class="text-xs font-semibold uppercase tracking-wider text-[#fab387]">Emergency Response &amp; Public Safety</h3>
@@ -668,7 +654,7 @@
           </div>
 
           <div class="p-4 rounded-xl bg-[#11111b] border border-[#313244] space-y-2 searchable-item">
-            <h3 class="text-xs font-semibold uppercase tracking-wider text-[#fab387]">Transit, Municipal Operations &amp; Public Infrastructure</h3>
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[#fab387]">Transit, Municipal Operations &amp; Infrastructure</h3>
             <ul class="space-y-1.5 text-xs text-[#a6adc8] list-disc list-inside">
               <li><strong class="text-[#cdd6f4]">Santa Clara Valley Transportation Authority (VTA)</strong> — More than drivers to us; sometimes they were the only shed of light when things got dark and hopeless, keeping public transit moving and connecting our local communities.</li>
               <li><strong class="text-[#cdd6f4]">San José Department of Transportation (DOT)</strong> — Managing city roadway infrastructure, traffic engineering, and mobility safety.</li>
@@ -839,87 +825,24 @@
         </a>
       </div>
 
-      <!-- Core 4 Team Roster & GitHub Masked (noreply) Emails -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-        <!-- @axeon3 -->
-        <article class="card-surface rounded-xl p-4 space-y-2.5 searchable-item">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-              <span class="font-mono text-sm font-bold text-[#cdd6f4]">@axeon3</span>
-              <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#a6e3a1]/15 text-[#a6e3a1] border border-[#a6e3a1]/30">Verified Masked Email</span>
-            </div>
-            <a href="https://github.com/axeon3" target="_blank" rel="noopener noreferrer" class="text-xs text-[#89b4fa] hover:underline flex items-center gap-1">
-              <span>GitHub</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-          <div class="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#11111b] border border-[#313244]">
-            <code class="text-xs text-[#94e2d5] truncate">320052373+axeon3@users.noreply.github.com</code>
-            <button type="button" data-copy="320052373+axeon3@users.noreply.github.com" aria-label="Copy @axeon3 GitHub masked email"
-                    class="copy-btn p-1.5 rounded-md hover:bg-[#242538] text-[#a6adc8] hover:text-[#cdd6f4] cursor-pointer shrink-0">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- @gsrini3 -->
-        <article class="card-surface rounded-xl p-4 space-y-2.5 searchable-item">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-              <span class="font-mono text-sm font-bold text-[#cdd6f4]">@gsrini3</span>
-              <span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#f9e2af]/15 text-[#f9e2af] border border-[#f9e2af]/30">GitHub ID Template</span>
-            </div>
-            <a href="https://github.com/gsrini3" target="_blank" rel="noopener noreferrer" class="text-xs text-[#89b4fa] hover:underline flex items-center gap-1">
-              <span>GitHub</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-          <div class="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#11111b] border border-[#313244]">
-            <code class="text-xs text-[#a6adc8] truncate">&lt;id&gt;+gsrini3@users.noreply.github.com</code>
-            <button type="button" data-copy="<id>+gsrini3@users.noreply.github.com" aria-label="Copy @gsrini3 GitHub masked email template"
-                    class="copy-btn p-1.5 rounded-md hover:bg-[#242538] text-[#a6adc8] hover:text-[#cdd6f4] cursor-pointer shrink-0">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- @priyajitpaul275 -->
-        <article class="card-surface rounded-xl p-4 space-y-2.5 searchable-item">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-              <span class="font-mono text-sm font-bold text-[#cdd6f4]">@priyajitpaul275</span>
-              <span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#f9e2af]/15 text-[#f9e2af] border border-[#f9e2af]/30">GitHub ID Template</span>
-            </div>
-            <a href="https://github.com/priyajitpaul275" target="_blank" rel="noopener noreferrer" class="text-xs text-[#89b4fa] hover:underline flex items-center gap-1">
-              <span>GitHub</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-          <div class="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#11111b] border border-[#313244]">
-            <code class="text-xs text-[#a6adc8] truncate">&lt;id&gt;+priyajitpaul275@users.noreply.github.com</code>
-            <button type="button" data-copy="<id>+priyajitpaul275@users.noreply.github.com" aria-label="Copy @priyajitpaul275 GitHub masked email template"
-                    class="copy-btn p-1.5 rounded-md hover:bg-[#242538] text-[#a6adc8] hover:text-[#cdd6f4] cursor-pointer shrink-0">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- @mariamtahir -->
-        <article class="card-surface rounded-xl p-4 space-y-2.5 searchable-item">
-          <div class="flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-              <span class="font-mono text-sm font-bold text-[#cdd6f4]">@mariamtahir</span>
-              <span class="px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#f9e2af]/15 text-[#f9e2af] border border-[#f9e2af]/30">GitHub ID Template</span>
-            </div>
-            <a href="https://github.com/mariamtahir" target="_blank" rel="noopener noreferrer" class="text-xs text-[#89b4fa] hover:underline flex items-center gap-1">
-              <span>GitHub</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-          <div class="flex items-center justify-between gap-2 p-2.5 rounded-lg bg-[#11111b] border border-[#313244]">
-            <code class="text-xs text-[#a6adc8] truncate">&lt;id&gt;+mariamtahir@users.noreply.github.com</code>
-            <button type="button" data-copy="<id>+mariamtahir@users.noreply.github.com" aria-label="Copy @mariamtahir GitHub masked email template"
-                    class="copy-btn p-1.5 rounded-md hover:bg-[#242538] text-[#a6adc8] hover:text-[#cdd6f4] cursor-pointer shrink-0">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-        </article>
+      <!-- Core Team Roster -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <a href="https://github.com/axeon3" target="_blank" rel="noopener noreferrer" class="card-surface rounded-xl p-4 flex items-center justify-between searchable-item">
+          <span class="font-mono text-sm font-semibold text-[#cdd6f4]">@axeon3</span>
+          <span class="text-xs text-[#89b4fa] flex items-center gap-1">GitHub <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+        </a>
+        <a href="https://github.com/gsrini3" target="_blank" rel="noopener noreferrer" class="card-surface rounded-xl p-4 flex items-center justify-between searchable-item">
+          <span class="font-mono text-sm font-semibold text-[#cdd6f4]">@gsrini3</span>
+          <span class="text-xs text-[#89b4fa] flex items-center gap-1">GitHub <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+        </a>
+        <a href="https://github.com/priyajitpaul275" target="_blank" rel="noopener noreferrer" class="card-surface rounded-xl p-4 flex items-center justify-between searchable-item">
+          <span class="font-mono text-sm font-semibold text-[#cdd6f4]">@priyajitpaul275</span>
+          <span class="text-xs text-[#89b4fa] flex items-center gap-1">GitHub <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+        </a>
+        <a href="https://github.com/mariamtahir" target="_blank" rel="noopener noreferrer" class="card-surface rounded-xl p-4 flex items-center justify-between searchable-item">
+          <span class="font-mono text-sm font-semibold text-[#cdd6f4]">@mariamtahir</span>
+          <span class="text-xs text-[#89b4fa] flex items-center gap-1">GitHub <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+        </a>
       </div>
     </section>
 
@@ -986,14 +909,31 @@
           </div>
 
           <div class="p-4 rounded-xl bg-[#11111b] border border-[#313244] space-y-1">
-            <h4 class="font-semibold text-[#cdd6f4]">About the Team Lead</h4>
-            <p>Axe, you have been an amazing team lead. You showed great responsibility and effort, made sure everyone got to contribute their part, and ensured we had everything we needed for the project.</p>
+            <h4 class="font-semibold text-[#cdd6f4]">Team Collaboration &amp; Coordination</h4>
+            <p>Axe, you brought strong commitment and effort to the collaboration, helped ensure everyone could contribute their part, and kept the project moving forward with what we needed.</p>
           </div>
 
           <div class="p-4 rounded-xl bg-[#11111b] border border-[#313244] space-y-1">
             <h4 class="font-semibold text-[#cdd6f4]">One Suggestion</h4>
             <p>Moving forward, it would be even better if we finalize every detail within the hackathon timeline.</p>
           </div>
+        </div>
+      </article>
+
+      <!-- Priyajit (@priyajitpaul275) -->
+      <article class="card-surface rounded-2xl p-6 space-y-4 searchable-item">
+        <div class="flex items-center gap-3 border-b border-[#313244] pb-3.5">
+          <div class="w-10 h-10 rounded-xl bg-[#11111b] border border-[#fab387]/40 flex items-center justify-center font-mono text-sm font-bold text-[#fab387]">PP</div>
+          <div>
+            <h3 class="text-base sm:text-lg font-bold text-[#cdd6f4]">Priyajit (<a href="https://github.com/priyajitpaul275" target="_blank" rel="noopener noreferrer" class="font-mono text-[#fab387] hover:underline">@priyajitpaul275</a>)</h3>
+            <p class="text-xs text-[#a6adc8]">Hackathon Reflection</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs sm:text-sm text-[#a6adc8] leading-relaxed">
+          <p>As this hackathon journey comes to an end, I'm grateful for everything it has taught me. From new challenges and countless discussions to teamwork and learning from mistakes, every moment was a valuable experience.</p>
+          <p>I may not have known everything at the beginning, but I leave with new skills, meaningful connections, and a better understanding of what it takes to turn an idea into reality.</p>
+          <p>Thank you to everyone who was part of this journey. The experience doesn't end here; it's just another step towards bigger things.</p>
         </div>
       </article>
 
@@ -1014,20 +954,8 @@
 
     <!-- Footer -->
     <footer class="pt-6 border-t border-[#313244] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#a6adc8]">
-      <span>Team Axe · NASA Space Apps Challenge 2026 (Nov 14–15, 2026) · 10 - CLPS: Lunar Landing Site Navigator</span>
-      <div class="flex flex-wrap items-center gap-4">
-        <span>Independent participant project; NASA links and datasets cited for attribution without agency endorsement.</span>
-        <a href="/contact" class="text-[#89b4fa] hover:underline font-medium">Contact</a>
-      </div>
-
-      <!-- Off-screen honeypot trap (bypasses display:none checks in headless scrapers) -->
-      <a href="/bot-trap-url"
-         rel="nofollow"
-         aria-hidden="true"
-         tabindex="-1"
-         style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
-        Internal Directory
-      </a>
+      <span>Team Axe · NASA Space Apps Challenge 2026 · Lunar Landing Site Navigator</span>
+      <span>Catppuccin Mocha (<code class="text-[#89b4fa]">#181825</code>)</span>
     </footer>
   </div>
 
@@ -1130,4 +1058,3 @@
   </script>
 </body>
 </html>
-```
